@@ -48,7 +48,9 @@ Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST
 
 ## Cleanup
 `docker stop jenkins-master && docker rm jenkins-master`{{execute}}
+
 `docker stop jenkins-slave && docker rm jenkins-slave`{{execute}}
+
 `rm -rf /tmp/jenkins`{{execute}}
 
 ## Summary
