@@ -24,7 +24,9 @@
     "assets": {
       "client": [{
         "file": "docker-compose.yml",
-        "target": "/tmp/jenkins"
+        "target": "/tmp/jenkins",
+        "chmod": "664",
+        "chown": "scrapbook"
       }]
     }
   },

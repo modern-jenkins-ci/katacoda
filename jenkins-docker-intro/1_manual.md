@@ -17,12 +17,14 @@ In this step we will pull the Jenkins images and run them manually
 
 `docker run -d \
     --name jenkins-master \
+    -u root \
     -v /tmp/jenkins/data/jenkins-master:/var/jenkins_home \
     -p 8080:8080 -p 50000:50000 \
     jenkins/jenkins:lts-alpine`{{execute}}
 
 `docker run -d \
     --name jenkins-slave \
+    -u root \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp/jenkins/data/jenkins-slave:/home/jenkins/ci-agent \
     jenkins/jenkins:lts-alpine \
