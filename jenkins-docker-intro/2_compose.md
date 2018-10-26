@@ -21,13 +21,13 @@ This will start up the containers in detached mode so they will run in the backg
 
 Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/ to see the setup wizard. By default the Jenkins docker image creates an `admin` user to do the initial configuration of your Jenkins server. The password can be found inside the container. To display that password run the following command:
 
-`docker exec -t jenkins-master cat /var/jenkins_home/secrets/initialAdminPassword`{{execute}}
+`docker-compose exec jenkins-master cat /var/jenkins_home/secrets/initialAdminPassword`{{execute}}
 
 ## Logs
 
 Lets look at the master's log file:
 
-`docker-compose logs -f jenkins-master`
+`docker-compose logs -f jenkins-master`{{execute}}
 
 ## Summary
 
