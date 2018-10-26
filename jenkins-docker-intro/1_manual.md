@@ -38,7 +38,7 @@ Lets take a look at the running containers:
 
 We can even look at the logs of our Jenkins master:
 
-`docker logs jenkins-master`{{execute}}
+`docker logs -f jenkins-master`{{execute}}
 
 ## Jenkins UI
 
