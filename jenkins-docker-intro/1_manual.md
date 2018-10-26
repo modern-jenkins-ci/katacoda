@@ -10,10 +10,8 @@ In this step we will pull the Jenkins images and run them manually
 
 `docker pull jenkins/slave:alpine`{{execute}}
 
-`mkdir -p /tmp/jenkins/data/jenkins-master \
-    && mkdir -p /tmp/jenkins/data/jenkins-slave \
-    && cd /tmp/jenkins \
-    && chown -R 1000:1000 data`{{execute}}
+`mkdir -p /tmp/jenkins/data \
+    && cd /tmp/jenkins`{{execute}}
 
 `docker run -d \
     --name jenkins-master \

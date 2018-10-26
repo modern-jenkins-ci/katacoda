@@ -6,10 +6,8 @@ docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.do
 
 In this step we will inspect our docker-compose file and run the docker-compose commands to start our containers.
 
-`mkdir -p /tmp/jenkins/data/jenkins-master \
-    && mkdir -p /tmp/jenkins/data/jenkins-slave \
-    && cd /tmp/jenkins \
-    && chown -R 1000:1000 data`{{execute}}
+`mkdir -p /tmp/jenkins/data \
+    && cd /tmp/jenkins`{{execute}}
 
 `cat docker-compose.yml`{{execute}}
 
