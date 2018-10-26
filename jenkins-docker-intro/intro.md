@@ -1,0 +1,1 @@
+This course will introduce you to the concepts of running a dockerized Jenkins environment. It will spin up a vanilla instance of a Jenkins master server along with a Jenkins slave agent. It will introduce you to running docker-compose commands to start Jenkins.

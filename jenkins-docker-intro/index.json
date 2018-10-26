@@ -1,0 +1,35 @@
+{
+  "title": "Jenkins+Docker",
+  "description": "An introduction to running Jenkins with Docker orchestrated by Docker-Compose",
+  "icon": "fa-jenkins",
+  "difficulty": "advanced",
+  "time": "15-20 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "steps": [
+      {
+        "title": "Manual Container Orchestration",
+        "text": "1_manual.md"
+      },
+      {
+        "title": "Docker-Compose Container Orchestration",
+        "text": "2_compose.md"
+      }
+    ]
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {"name": "Jenkins Master", "port": 8080}
+    ]
+  },
+  "backend": {
+    "imageid": "docker"
+  }
+}
