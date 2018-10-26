@@ -10,7 +10,10 @@ In this step we will pull the Jenkins images and run them manually
 
 `docker pull jenkins/slave:alpine`{{execute}}
 
-`mkdir data`{{execute}}
+`mkdir -p manual/data/jenkins-master \
+    && mkdir -p manual/data/jenkins-slave \
+    && cd manual \
+    && chown -R 1000:1000 data`{{execute}}
 
 `docker run -d \
     --name jenkins-master \
@@ -24,6 +27,16 @@ In this step we will pull the Jenkins images and run them manually
     -v $PWD/data/jenkins-slave:/home/jenkins/ci-agent \
     jenkins/jenkins:lts-alpine \
     java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://jenkins-master:8080/computer/docker-slave/slave-agent.jnlp -secret "xxx" -workDir "/home/jenkins/ci-agent"`{{execute}}
+
+## Check the Running Containers
+
+Lets take a look at the running containers:
+
+`docker ps -a`{{execute}}
+
+We can even look at the logs of our Jenkins master:
+
+`docker logs jenkins-master`{{execute}}
 
 ## UI
 
