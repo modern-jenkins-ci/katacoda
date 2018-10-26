@@ -7,6 +7,7 @@ Lets create some Jenkins containers!
 In this step we will pull the Jenkins images and run them manually
 
 `docker pull jenkins/jenkins:lts-alpine`{{execute}}
+
 `docker pull jenkins/slave:alpine`{{execute}}
 
 `mkdir data`{{execute}}
