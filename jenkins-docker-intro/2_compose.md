@@ -13,7 +13,7 @@ In this step we will inspect our docker-compose file and run the docker-compose 
 
 Let start up the containers:
 
-`docker-compose up -d`
+`docker-compose up -d`{{execute}}
 
 This will start up the containers in detached mode so they will run in the background.
 
