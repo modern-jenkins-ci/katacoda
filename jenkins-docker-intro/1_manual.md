@@ -51,7 +51,7 @@ Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST
 
 `docker stop jenkins-slave && docker rm jenkins-slave`{{execute}}
 
-`rm -rf /tmp/jenkins`{{execute}}
+`rm -rf /tmp/jenkins/data/*`{{execute}}
 
 ## Summary
 
