@@ -10,21 +10,21 @@ In this step we will pull the Jenkins images and run them manually
 
 `docker pull jenkins/slave:alpine`{{execute}}
 
-`mkdir -p manual/data/jenkins-master \
-    && mkdir -p manual/data/jenkins-slave \
-    && cd manual \
+`mkdir -p /tmp/jenkins/data/jenkins-master \
+    && mkdir -p /tmp/jenkins/data/jenkins-slave \
+    && cd /tmp/jenkins \
     && chown -R 1000:1000 data`{{execute}}
 
 `docker run -d \
     --name jenkins-master \
-    -v $PWD/data/jenkins-master:/var/jenkins_home \
+    -v /tmp/jenkins/data/jenkins-master:/var/jenkins_home \
     -p 8080:8080 -p 50000:50000 \
     jenkins/jenkins:lts-alpine`{{execute}}
 
 `docker run -d \
     --name jenkins-slave \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v $PWD/data/jenkins-slave:/home/jenkins/ci-agent \
+    -v /tmp/jenkins/data/jenkins-slave:/home/jenkins/ci-agent \
     jenkins/jenkins:lts-alpine \
     java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://jenkins-master:8080/computer/docker-slave/slave-agent.jnlp -secret "xxx" -workDir "/home/jenkins/ci-agent"`{{execute}}
 
@@ -38,7 +38,7 @@ We can even look at the logs of our Jenkins master:
 
 `docker logs jenkins-master`{{execute}}
 
-## UI
+## Jenkins UI
 
 Navigate to the Jenkins UI here: [https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/) to see the setup wizard. By default the Jenkins docker image creates an `admin` user to do the initial configuration of your Jenkins server. The password can be found inside the container. To display that password run the following command:
 
@@ -47,6 +47,7 @@ Navigate to the Jenkins UI here: [https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOS
 ## Cleanup
 `docker stop jenkins-master && docker rm jenkins-master`{{execute}}
 `docker stop jenkins-slave && docker rm jenkins-slave`{{execute}}
+`rm -rf /tmp/jenkins`{{execute}}
 
 ## Summary
 

@@ -4,14 +4,14 @@ docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.do
 
 ## Orchestration with docker-compose
 
-In this step we will pull a docker-compose file and run the docker-compose commands to start our containers.
+In this step we will inspect our docker-compose file and run the docker-compose commands to start our containers.
 
-`git clone https://github.com/modern-jenkins-ci/docker-jenkins-basic`{{execute}}
+`mkdir -p /tmp/jenkins/data/jenkins-master \
+    && mkdir -p /tmp/jenkins/data/jenkins-slave \
+    && cd /tmp/jenkins \
+    && chown -R 1000:1000 data`{{execute}}
 
-Lets change into that newly pulled repo and create a data directory for our jenkins data.
-
-`cd docker-jenkins-basic && \
-    mkdir data`{{execute}}
+`cat docker-compose.yml`{{execute}}
 
 Let start up the containers:
 
@@ -19,7 +19,7 @@ Let start up the containers:
 
 This will start up the containers in detached mode so they will run in the background.
 
-## UI
+## Jenkins UI
 
 Navigate to the Jenkins UI here: [https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/) to see the setup wizard. By default the Jenkins docker image creates an `admin` user to do the initial configuration of your Jenkins server. The password can be found inside the container. To display that password run the following command:
 
