@@ -27,7 +27,7 @@ In this step we will pull the Jenkins images and run them manually
     -u root \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp/jenkins/data/jenkins-slave:/home/jenkins/ci-agent \
-    jenkins/jenkins:lts-alpine \
+    jenkins/slave:alpine \
     java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://jenkins-master:8080/computer/docker-slave/slave-agent.jnlp -secret "xxx" -workDir "/home/jenkins/ci-agent"`{{execute}}
 
 ## Check the Running Containers
