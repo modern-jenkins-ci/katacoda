@@ -14,16 +14,10 @@
     "steps": [
       {
         "title": "Jenkins Cattle",
-        "text": "1_cattlevspets.md"
+        "text": "1_cattlevspets.md",
+        "code": "seed.sh"
       }
-    ],
-    "assets": {
-      "client": [{
-        "file": "seed.env",
-        "target": "/tmp",
-        "chmod": "664"
-      }]
-    }
+    ]
   },
   "environment": {
     "uilayout": "terminal",
