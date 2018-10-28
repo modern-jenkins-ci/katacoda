@@ -8,9 +8,11 @@ First we will clone our fully configured Jenkins infrastructure docker-compose f
 
 `cd docker-jenkins`{{execute}}
 
-lets look at the jenkins master init.d scripts
+Lets take a look at the docker-compose file:
 
 `cat docker-compose.yml`{{execute}}
+
+Lets take a look at the Jenkins master Dockerfile:
 
 `cat build/master/Dockerfile`{{execute}}
 
