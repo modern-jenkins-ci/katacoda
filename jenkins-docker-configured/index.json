@@ -14,7 +14,7 @@
     "steps": [
       {
         "title": "Jenkins Cattle",
-        "text": "1_intro.md"
+        "text": "1_cattlevspets.md"
       }
     ],
     "assets": {
