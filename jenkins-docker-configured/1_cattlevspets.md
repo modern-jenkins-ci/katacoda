@@ -10,7 +10,7 @@ docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.do
 
 lets look at the jenkins master init.d scripts
 
-`cat docker-compose.yml`
+`cat docker-compose.yml`{{execute}}
 
 Lets build the images before we startup Jenkins. The docker-compose up command will build the images automatically but we have to ablity to build the images before we start them up.
 
