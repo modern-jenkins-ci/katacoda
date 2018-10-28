@@ -5,7 +5,7 @@ export SECRETS_SEED_URL=https://goo.gl/mJV8wz
 export JENKINS_FRONTEND_URL=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/
 export LOAD_LOCAL_SECRETS=false
 
-git clone https://github.com/modern-jenkins-ci/docker-jenkins.git
+git clone https://github.com/modern-jenkins-ci/docker-jenkins.git $HOME/docker-jenkins
 
 cd $HOME/docker-jenkins
 mkdir -p build/master/secrets
