@@ -43,7 +43,7 @@ By leveraging Jenkins Groovy Hook script processes [https://wiki.jenkins.io/disp
 Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/ to see the fully configured Jenkins instance.
 In this incarnation of the Jenkins setup we are not using the  have preconfigured:
 
-`source .seed.env && echo $LOCAL_PASSWORD`{{execute}}
+`echo $LOCAL_PASSWORD`{{execute}}
 
 ## Logs
 
