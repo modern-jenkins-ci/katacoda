@@ -20,6 +20,24 @@ Lets build the images before we startup Jenkins. The docker-compose up command w
 
 `./start.sh`{{execute}}
 
+## Jenkins master configuration as code
+
+```bash
+❯ tree -L 2 build/master
+├── Dockerfile
+├── init.groovy.d
+│   ├── adminuser.groovy
+│   ├── buildagent.groovy
+│   ├── credentials.groovy
+│   ├── csrf.groovy
+│   ├── mastersettings.groovy
+│   ├── slavemaster.groovy
+│   └── zzzgithuborg.groovy
+└── plugins.txt
+```
+
+By leveraging Jenkins Groovy Hook script processes [https://wiki.jenkins.io/display/JENKINS/Groovy+Hook+Script](https://wiki.jenkins.io/display/JENKINS/Groovy+Hook+Script) we can pre-configure users, build slaves, credentials, etc. all in code. This give us the ability to control all the configuration with code and brings us one step closer to treating the Jenkins infrastructure as cattle not pets.
+
 ## Jenkins UI
 
 Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/ to see the fully configured Jenkins instance.
