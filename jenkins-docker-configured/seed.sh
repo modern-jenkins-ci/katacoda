@@ -7,6 +7,8 @@ export LOAD_LOCAL_SECRETS=false
 
 git clone https://github.com/modern-jenkins-ci/docker-jenkins.git
 
-cd docker-jenkins
+cd $HOME/docker-jenkins
 mkdir -p build/master/secrets
 curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/github
+
+cd $HOME
