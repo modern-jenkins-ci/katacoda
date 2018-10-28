@@ -1,0 +1,42 @@
+{
+  "title": "Jenkins+Docker Advanced",
+  "description": "An fully configured Jenkins instance using Jenkins init scripts and docker-compose.",
+  "icon": "fa-jenkins",
+  "difficulty": "Advanced",
+  "time": "20-30 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "steps": [
+      {
+        "title": "Manual Container Orchestration",
+        "text": "1_intro.md"
+      },
+      {
+        "title": "Docker-Compose Container Orchestration",
+        "text": "2_compose.md"
+      }
+    ],
+    "assets": {
+      "client": [{
+        "file": "seed.env",
+        "target": "/tmp/seed.env",
+        "chmod": "664"
+      }]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {"name": "Jenkins Master", "port": 8080}
+    ]
+  },
+  "backend": {
+    "imageid": "docker"
+  }
+}
