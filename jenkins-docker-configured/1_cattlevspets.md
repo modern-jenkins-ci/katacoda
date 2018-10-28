@@ -1,8 +1,8 @@
 Lets create some Jenkins containers with docker-compose!
 
-docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.docker.com/compose/overview/)
+## Getting Started
 
-## Orchestration with docker-compose
+First we will clone our fully configured Jenkins infrastructure docker-compose file
 
 `git clone https://github.com/modern-jenkins-ci/docker-jenkins.git`{{execute}}
 
@@ -11,6 +11,8 @@ docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.do
 lets look at the jenkins master init.d scripts
 
 `cat docker-compose.yml`{{execute}}
+
+`cat build/master/Dockerfile`{{execute}}
 
 Lets build the images before we startup Jenkins. The docker-compose up command will build the images automatically but we have to ablity to build the images before we start them up.
 
