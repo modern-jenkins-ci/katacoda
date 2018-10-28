@@ -6,8 +6,6 @@ docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.do
 
 `git clone https://github.com/modern-jenkins-ci/docker-jenkins.git`{{execute}}
 
-`cp /tmp/seed.env docker-jenkins/.seed.env`{{execute}}
-
 `cd docker-jenkins`{{execute}}
 
 lets look at the jenkins master init.d scripts
