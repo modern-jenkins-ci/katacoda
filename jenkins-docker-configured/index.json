@@ -20,7 +20,7 @@
     "assets": {
       "client": [{
         "file": "seed.env",
-        "target": "/tmp/seed.env",
+        "target": "/tmp",
         "chmod": "664"
       }]
     }
