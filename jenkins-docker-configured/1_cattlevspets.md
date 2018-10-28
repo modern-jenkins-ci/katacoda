@@ -2,9 +2,7 @@ Lets create some Jenkins containers with docker-compose!
 
 ## Getting Started
 
-First we will clone our fully configured Jenkins infrastructure docker-compose file
-
-`git clone https://github.com/modern-jenkins-ci/docker-jenkins.git`{{execute}}
+We will be using an existing configured Jenkins project which can be found here: [https://github.com/modern-jenkins-ci/docker-jenkins](https://github.com/modern-jenkins-ci/docker-jenkins)
 
 `cd docker-jenkins`{{execute}}
 
