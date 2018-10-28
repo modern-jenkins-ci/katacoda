@@ -4,7 +4,7 @@ docker-compose link: [https://docs.docker.com/compose/overview/](https://docs.do
 
 ## Orchestration with docker-compose
 
-`git pull https://github.com/modern-jenkins-ci/docker-jenkins.git`{{execute}}
+`git clone https://github.com/modern-jenkins-ci/docker-jenkins.git`{{execute}}
 
 `cp /tmp/seed.env docker-jenkins/.seed.env`{{execute}}
 
