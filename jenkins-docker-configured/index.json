@@ -13,12 +13,8 @@
     },
     "steps": [
       {
-        "title": "Manual Container Orchestration",
+        "title": "Jenkins Cattle",
         "text": "1_intro.md"
-      },
-      {
-        "title": "Docker-Compose Container Orchestration",
-        "text": "2_compose.md"
       }
     ],
     "assets": {
