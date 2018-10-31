@@ -45,6 +45,14 @@ In this incarnation of the Jenkins setup we are not using the  have preconfigure
 
 `echo $LOCAL_PASSWORD`{{execute}}
 
+## Slave setup
+
+`export SLAVE_SECRET=`{{copy}}
+
+Then we will need to re-create the slave with the proper join token. The easiest way to do that is to run the start.sh script again. Or by `running docker-compose up -d`
+
+`./start.sh`{{execute}}
+
 ## Logs
 
 Lets look at the master's log file:
