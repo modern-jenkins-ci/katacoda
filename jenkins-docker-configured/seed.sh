@@ -12,3 +12,5 @@ mkdir -p build/master/secrets
 curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/github
 
 cd $HOME
+clear
+pwd
