@@ -4,21 +4,29 @@ Lets create some Jenkins containers with docker-compose!
 
 We will be using an existing configured Jenkins project which can be found here: [https://github.com/modern-jenkins-ci/docker-jenkins](https://github.com/modern-jenkins-ci/docker-jenkins)
 
-`cd docker-jenkins`{{execute}}
+### Master:
+
+`cd docker-jenkins`{{execute HOST1}}
+
+### Slave:
+
+`cd docker-jenkins`{{execute HOST2}}
 
 Lets take a look at the docker-compose file:
 
-`cat docker-compose.yml`{{execute}}
+`cat docker-compose.yml`{{execute HOST1}}
 
 Lets take a look at the Jenkins master Dockerfile:
 
-`cat build/master/Dockerfile`{{execute}}
+`cat build/master/Dockerfile`{{execute HOST1}}
 
 Lets build the images before we startup Jenkins. The docker-compose up command will build the images automatically but we have to ablity to build the images before we start them up.
 
-`docker-compose build`{{execute}}
+### Build & Start Master
 
-`./start.sh`{{execute}}
+`docker-compose build jenkins-master`{{execute HOST1}}
+
+`./start-master.sh`{{execute}}
 
 ## Jenkins master configuration as code
 
@@ -47,17 +55,25 @@ In this incarnation of the Jenkins setup we are not using the  have preconfigure
 
 ## Slave setup
 
+### Build & Start Slave
+
+We will need to create the slave with the proper join token. The easiest way to do this is to login to Jenkins UI and navigate to this link:
+
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/computers/docker-slave
+
+Thank we will need to copy paste the join token as the environment variable `SLAVE_SECRET`
+
 `export SLAVE_SECRET=`{{copy}}
 
-Then we will need to re-create the slave with the proper join token. The easiest way to do that is to run the start.sh script again. Or by `running docker-compose up -d`
+`docker-compose build jenkins-slave`{{execute HOST2}}
 
-`./start.sh`{{execute}}
+`./start-slave.sh`{{execute HOST2}}
 
 ## Logs
 
 Lets look at the master's log file:
 
-`docker-compose logs -f jenkins-master`{{execute}}
+`docker-compose logs -f jenkins-master`{{execute HOST1}}
 
 ## Summary
 
