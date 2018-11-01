@@ -13,8 +13,9 @@ mkdir -p build/master/secrets
 curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/github
 
 cd $HOME
-clear
-pwd
 
 ssh root@[[HOST_IP]] "hostnamectl set-hostname host01; echo host01 > /etc/hostname; systemctl restart docker"
 ssh root@[[HOST2_IP]] "hostnamectl set-hostname host02; echo host02 > /etc/hostname; systemctl restart docker"
+
+clear
+pwd
