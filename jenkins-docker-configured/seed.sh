@@ -4,6 +4,7 @@ export SLAVE_SECRET=
 export SECRETS_SEED_URL=https://goo.gl/mJV8wz
 export JENKINS_FRONTEND_URL=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/
 export LOAD_LOCAL_SECRETS=false
+export JENKINS_SERVER=host01
 
 git clone https://github.com/modern-jenkins-ci/docker-jenkins.git $HOME/docker-jenkins
 
@@ -14,3 +15,6 @@ curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/github
 cd $HOME
 clear
 pwd
+
+ssh root@[[HOST_IP]] "hostnamectl set-hostname host01; echo host01 > /etc/hostname; systemctl restart docker"
+ssh root@[[HOST2_IP]] "hostnamectl set-hostname host02; echo host02 > /etc/hostname; systemctl restart docker"
