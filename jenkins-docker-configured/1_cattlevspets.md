@@ -59,7 +59,7 @@ In this incarnation of the Jenkins setup we are not using the  have preconfigure
 
 We will need to create the slave with the proper join token. The easiest way to do this is to login to Jenkins UI and navigate to this link:
 
-https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/computers/docker-slave
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/computer/docker-slave
 
 Thank we will need to copy paste the join token as the environment variable `SLAVE_SECRET`
 
