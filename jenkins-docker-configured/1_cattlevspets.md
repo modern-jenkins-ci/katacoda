@@ -38,9 +38,9 @@ Lets build the images before we startup Jenkins. The docker-compose up command w
 │   ├── buildagent.groovy
 │   ├── credentials.groovy
 │   ├── csrf.groovy
+│   ├── githuborg.groovy
 │   ├── mastersettings.groovy
-│   ├── slavemaster.groovy
-│   └── zzzgithuborg.groovy
+│   └── slavemaster.groovy
 └── plugins.txt
 ```
 
