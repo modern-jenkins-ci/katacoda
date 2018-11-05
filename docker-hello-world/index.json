@@ -31,7 +31,7 @@
     "uimessage1": "\u001b[32mYour Interactive Docker Terminal.\r\nLets run some docker commands...\u001b[m\r\n",
     "showdashboard": true,
     "dashboards": [{
-      "name": "Jenkins Master",
+      "name": "SWPC Lite",
       "port": 8080
     }]
   },
