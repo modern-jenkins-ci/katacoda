@@ -1,8 +1,8 @@
 {
   "title": "Docker Hello World",
   "description": "Pull and run and docker image",
-  "difficulty": "beginner",
-  "time": "1 minute",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Commands",
