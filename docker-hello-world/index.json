@@ -5,8 +5,11 @@
   "time": "1 minute",
   "details": {
     "steps": [{
-      "title": "Step 1 - Run Command",
+      "title": "Step 1 - Run Commands",
       "text": "step1.md"
+    }, {
+      "title": "Step 2 - Build Custom Image",
+      "text": "step2.md"
     }],
     "intro": {
       "text": "intro.md",
@@ -14,11 +17,23 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [{
+        "file": "Dockerfile",
+        "target": "~/swpc",
+        "chmod": "664"
+      }]
     }
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nLets run some docker commands\u001b[m\r\n"
+    "uimessage1": "\u001b[32mYour Interactive Docker Terminal.\r\nLets run some docker commands...\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [{
+      "name": "Jenkins Master",
+      "port": 8080
+    }]
   },
   "backend": {
     "imageid": "docker"
