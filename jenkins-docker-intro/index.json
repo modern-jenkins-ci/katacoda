@@ -1,5 +1,5 @@
 {
-  "title": "Jenkins+Docker Intro",
+  "title": "Jenkins+Docker Step 1",
   "description": "An introduction to running Jenkins with Docker orchestrated by Docker-Compose",
   "icon": "fa-jenkins",
   "difficulty": "Intermediate",
