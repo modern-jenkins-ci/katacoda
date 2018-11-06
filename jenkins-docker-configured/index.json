@@ -1,5 +1,5 @@
 {
-  "title": "Jenkins+Docker Second",
+  "title": "Jenkins+Docker Advanced",
   "description": "An fully configured Jenkins instance using Jenkins init scripts and docker-compose.",
   "icon": "fa-jenkins",
   "difficulty": "Advanced",
