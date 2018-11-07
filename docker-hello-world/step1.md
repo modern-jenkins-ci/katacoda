@@ -1,4 +1,4 @@
-Lets run some docker commands to get familar with docker.
+Let's run some docker commands to get familiar with docker.
 
 ## Task
 
@@ -8,19 +8,24 @@ First, lets pull an example docker image:
 
 `docker pull hello-world:latest`{{execute}}
 
-Equvilant command:
+Equivalent command:
 
 `docker pull docker.io/hello-world:latest`{{execute}}
 
+Let's take a look at our docker images:
+
 `docker images`{{execute}}
 
-Next lets run that docker image and remove the container once it exits
+Next lets run that docker image:
+
 `docker run hello-world:latest`{{execute}}
+
+The `docker ps` command will let us see our container:
 
 `docker ps`{{execute}}
 
-Where is it? We should have a container. Well the `docker ps` command defaults to showing just running containers. So we need the -a flag:
+Where is it? We should have a container. Well, the `docker ps` command defaults to showing just running containers. So we need the -a flag:
 
 `docker ps -a`{{execute}}
 
-Next let's build a custom docker image and run it.
+That's it for the first step, next let's build a custom docker image and run it.
