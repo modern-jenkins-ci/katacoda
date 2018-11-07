@@ -22,7 +22,7 @@
       }
     ],
     "assets": {
-      "client": [{
+      "host01": [{
         "file": "docker-compose-master.yml",
         "target": "/home/scrapbook/tutorial",
         "chmod": "664"
