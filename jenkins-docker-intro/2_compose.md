@@ -26,7 +26,7 @@ This will pull the docker images and start up the containers in detached mode `-
 
 We should have two containers running now. A Jenkins master and a Jenkins build agent. You can see those running containers by running:
 
-`docker ps -a | grep --color -E '^|jenkins'`{{execute}}
+`docker ps -a | grep --color -E '^|jenkins'`{{execute HOST1}}
 
 ## Jenkins User Interface (UI)
 
