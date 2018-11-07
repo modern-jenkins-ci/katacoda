@@ -8,7 +8,7 @@ We will be using an existing configured Jenkins project which can be found here:
 
 `cd docker-jenkins`{{execute HOST1}}
 
-### Slave:
+### Build Agent:
 
 `cd docker-jenkins`{{execute HOST2}}
 
@@ -44,7 +44,7 @@ Lets build the images before we startup Jenkins. The docker-compose up command w
 └── plugins.txt
 ```
 
-By leveraging Jenkins Groovy Hook script processes [https://wiki.jenkins.io/display/JENKINS/Groovy+Hook+Script](https://wiki.jenkins.io/display/JENKINS/Groovy+Hook+Script) we can pre-configure users, build slaves, credentials, etc. all in code. This give us the ability to control all the configuration with code and brings us one step closer to treating the Jenkins infrastructure as cattle not pets.
+By leveraging Jenkins Groovy Hook script processes [https://wiki.jenkins.io/display/JENKINS/Groovy+Hook+Script](https://wiki.jenkins.io/display/JENKINS/Groovy+Hook+Script) we can pre-configure users, build build agents, credentials, etc. all in code. This give us the ability to control all the configuration with code and brings us one step closer to treating the Jenkins infrastructure as cattle not pets.
 
 ## Jenkins UI
 
@@ -53,21 +53,21 @@ In this incarnation of the Jenkins setup we are not using the  have preconfigure
 
 `echo $LOCAL_PASSWORD`{{execute}}
 
-## Slave setup
+## Agent setup
 
-### Build & Start Slave
+### Build & Start Agent
 
-We will need to create the slave with the proper join token. The easiest way to do this is to login to Jenkins UI and navigate to this link:
+We will need to create the build agent with the proper join token. The easiest way to do this is to login to Jenkins UI and navigate to this link:
 
-https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/computer/docker-slave
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/computer/docker-agent
 
-Thank we will need to copy paste the join token as the environment variable `SLAVE_SECRET`
+Thank we will need to copy paste the join token as the environment variable `JOIN_SECRET`
 
-`export SLAVE_SECRET=`{{copy}}
+`export JOIN_SECRET=`{{copy}}
 
-`docker-compose build jenkins-slave`{{execute HOST2}}
+`docker-compose build jenkins-agent`{{execute HOST2}}
 
-`./start-slave.sh`{{execute HOST2}}
+`./start-agent.sh`{{execute HOST2}}
 
 ## Logs
 
