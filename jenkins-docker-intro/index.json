@@ -18,17 +18,19 @@
       },
       {
         "title": "Docker-Compose Container Orchestration",
-        "text": "2_compose.md"
+        "text": "2_compose.md",
+        "code": "compose-setup.sh"
       }
     ],
     "assets": {
       "host01": [{
         "file": "docker-compose-master.yml",
-        "target": "/home/scrapbook/tutorial",
+        "target": "/root",
         "chmod": "664"
-      }, {
+      }],
+      "host02": [{
         "file": "docker-compose-agent.yml",
-        "target": "/home/scrapbook/tutorial",
+        "target": "/root",
         "chmod": "664"
       }]
     }
