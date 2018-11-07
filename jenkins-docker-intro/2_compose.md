@@ -19,6 +19,7 @@ Master:
 `docker-compose up -d`{{execute HOST1}}
 
 Slave:
+
 `docker-compose up -d`{{execute HOST1}}
 
 This will pull the docker images and start up the containers in detached mode `-d` so they will run in the background.
