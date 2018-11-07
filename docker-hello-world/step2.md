@@ -24,7 +24,7 @@ Let's take a look at the `Dockerfile` we will use to build our docker image.
 
 We created the docker image and tagged it with `-t swpc:2018`. Let's look at our docker images now:
 
-`docker images`{{execute}}
+`docker images | grep --color -E '^|swpc|2018'`{{execute}}
 
 Now we can run our custom image:
 

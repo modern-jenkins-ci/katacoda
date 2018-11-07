@@ -14,7 +14,7 @@ Equivalent command:
 
 Let's take a look at our docker images:
 
-`docker images`{{execute}}
+`docker images | grep --color -E '^|hello-world'`{{execute}}
 
 Next lets run that docker image:
 
