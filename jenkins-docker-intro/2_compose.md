@@ -4,11 +4,22 @@ Lets create some Jenkins containers with docker-compose! For more information on
 
 In this step we will inspect our docker-compose file and run the docker-compose commands to start our containers.
 
-`cat docker-compose.yml`{{execute HOST1 HOST2}}
+Master:
+
+`cat docker-compose.yml`{{execute HOST1}}
+
+Slave:
+
+`cat docker-compose.yml`{{execute HOST2}}
 
 Let start up the containers:
 
-`docker-compose up -d`{{execute HOST1 HOST2}}
+Master:
+
+`docker-compose up -d`{{execute HOST1}}
+
+Slave:
+`docker-compose up -d`{{execute HOST1}}
 
 This will pull the docker images and start up the containers in detached mode `-d` so they will run in the background.
 
