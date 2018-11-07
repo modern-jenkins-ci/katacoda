@@ -11,5 +11,5 @@ services:
     depends_on:
      - jenkins-master
     command:
-      java -jar /usr/share/jenkins/slave.jar -jnlpUrl https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com:8080/computer/docker-agent/slave-agent.jnlp -secret "$JOIN_SECRET" -workDir "/home/jenkins/ci-agent"
+      java -jar /usr/share/jenkins/slave.jar -jnlpUrl $JENKIN_MASTER/computer/docker-agent/slave-agent.jnlp -secret "$JOIN_SECRET" -workDir "/home/jenkins/ci-agent"
     restart: unless-stopped
