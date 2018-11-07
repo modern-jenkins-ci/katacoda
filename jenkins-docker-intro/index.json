@@ -24,12 +24,12 @@
     "assets": {
       "host01": [{
         "file": "docker-compose-master.yml",
-        "target": "/tmp/jenkins",
+        "target": "/home/scrapbook/tutorial",
         "chmod": "664"
       }],
       "host02": [{
         "file": "docker-compose-agent.yml",
-        "target": "/tmp/jenkins",
+        "target": "/home/scrapbook/tutorial",
         "chmod": "664"
       }]
     }
