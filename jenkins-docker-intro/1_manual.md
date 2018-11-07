@@ -6,7 +6,7 @@ Lets create some Jenkins containers!
 
 In this step we will pull the Jenkins images and run them manually. The Dockerfile for the Jenkins master image can be found here: [https://github.com/jenkinsci/docker/blob/master/Dockerfile-alpine](https://github.com/jenkinsci/docker/blob/master/Dockerfile-alpine)
 
-`docker pull jenkins/jenkins:lts-alpine`{{execute}}
+`docker pull jenkins/jenkins:lts-alpine`{{execute HOST1}}
 
 `mkdir -p /tmp/jenkins/data \
     && cd /tmp/jenkins`{{execute}}
@@ -16,29 +16,27 @@ In this step we will pull the Jenkins images and run them manually. The Dockerfi
     -u root \
     -v /tmp/jenkins/data/jenkins-master:/var/jenkins_home \
     -p 8080:8080 -p 50000:50000 \
-    jenkins/jenkins:lts-alpine`{{execute}}
+    jenkins/jenkins:lts-alpine`{{execute HOST1}}
 
 ## Check the Running Container
 
 Lets take a look at the running containers:
 
-`docker ps -a | grep --color -E '^|jenkins-lts'`{{execute}}
+`docker ps -a | grep --color -E '^|jenkins/jenkins:lts-alpine'`{{execute HOST1}}
 
 We can even look at the logs of our Jenkins master:
 
-`docker logs -f jenkins-master`{{execute}}
+`docker logs -f jenkins-master`{{execute HOST1}}
 
-Lets exit the log tail:
-
-`^C`{{execute}}
+Exit the log tail by typing `^C`
 
 ## Jenkins User Interface (UI)
 
 Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/ to see the setup wizard. By default the Jenkins docker image creates an `admin` user to do the initial configuration of your Jenkins server. The password can be found inside the container. To display that password run the following command:
 
-`docker exec -t jenkins-master cat /var/jenkins_home/secrets/initialAdminPassword`{{execute}}
+`docker exec -t jenkins-master cat /var/jenkins_home/secrets/initialAdminPassword`{{execute HOST1}}
 
-If we wanted to start up a Jenkins agent on this host, we could run the following command:
+If we wanted to start up a Jenkins agent, we could run the following command:
 
 `docker run -d \
     --name jenkins-agent \
@@ -46,12 +44,12 @@ If we wanted to start up a Jenkins agent on this host, we could run the followin
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp/jenkins/data/jenkins-agent:/home/jenkins/ci-agent \
     jenkins/slave:alpine \
-    java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://jenkins-master:8080/computer/docker-agent/slave-agent.jnlp -secret "changeme" -workDir "/home/jenkins/ci-agent"`{{execute}}
+    java -jar /usr/share/jenkins/slave.jar -jnlpUrl https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com:8080/computer/docker-agent/slave-agent.jnlp -secret "changeme" -workDir "/home/jenkins/ci-agent"`{{execute HOST2}}
 
 ## Cleanup
-`docker stop jenkins-master && docker rm jenkins-master`{{execute}}
+`docker stop jenkins-master && docker rm jenkins-master`{{execute HOST1}}
 
-`docker stop jenkins-agent && docker rm jenkins-agent`{{execute}}
+`docker stop jenkins-agent && docker rm jenkins-agent`{{execute HOST2}}
 
 `docker ps -a`{{execute}}
 

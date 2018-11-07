@@ -7,7 +7,7 @@ In this step we will inspect our docker-compose file and run the docker-compose 
 `mkdir -p /tmp/jenkins/data \
     && cd /tmp/jenkins`{{execute}}
 
-`cat docker-compose.yml`{{execute}}
+`cat docker-compose.yml`{{execute HOST1}}
 
 Let start up the containers:
 
@@ -27,7 +27,13 @@ Navigate to the Jenkins UI here: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST
 
 Lets look at the master's log file with docker-compose:
 
-`docker-compose logs -f jenkins-master`{{execute}}
+`docker-compose logs -f jenkins-master`{{execute HOST1}}
+
+## Slave setup
+
+`export JOIN_SECRET=`{{copy}}
+
+`docker-compose up -d`{{execute HOST2}}
 
 ## Summary
 

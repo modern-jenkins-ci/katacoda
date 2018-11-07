@@ -22,16 +22,20 @@
       }
     ],
     "assets": {
-      "client": [{
-        "file": "docker-compose.yml",
-        "target": "/tmp/jenkins",
-        "chmod": "664",
-        "chown": "scrapbook"
+      "host01": [{
+        "file": "docker-compose-master.yml",
+        "target": "/tmp/jenkins/docker-compose.yml",
+        "chmod": "664"
+      }],
+      "host02": [{
+        "file": "docker-compose-agent.yml",
+        "target": "/tmp/jenkins/docker-compose.yml",
+        "chmod": "664"
       }]
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-terminal",
     "showdashboard": true,
     "dashboards": [
       {"name": "Jenkins Master", "port": 8080}

@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  jenkins-master:
+    image: jenkins/jenkins:lts-alpine
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - /tmp/jenkins/data/jenkins-master:/var/jenkins_home
+    restart: always
