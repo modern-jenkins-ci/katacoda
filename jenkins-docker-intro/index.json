@@ -24,12 +24,12 @@
     "assets": {
       "host01": [{
         "file": "docker-compose-master.yml",
-        "target": "/tmp/jenkins/docker-compose.yml",
+        "target": "/tmp/jenkins",
         "chmod": "664"
       }],
       "host02": [{
         "file": "docker-compose-agent.yml",
-        "target": "/tmp/jenkins/docker-compose.yml",
+        "target": "/tmp/jenkins",
         "chmod": "664"
       }]
     }
