@@ -21,5 +21,5 @@ services:
     depends_on:
      - jenkins-master
     command:
-      java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://jenkins-master:8080/computer/docker-slave/slave-agent.jnlp -secret "$SLAVE_SECRET" -workDir "/home/jenkins/ci-agent"
+      java -Xms256m -Xmx256m -jar /usr/share/jenkins/slave.jar -jnlpUrl http://jenkins-master:8080/computer/docker-slave/slave-agent.jnlp -secret "$SLAVE_SECRET" -workDir "/home/jenkins/ci-agent"
     restart: unless-stopped
