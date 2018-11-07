@@ -8,10 +8,6 @@ First, lets pull an example docker image:
 
 `docker pull hello-world:latest`{{execute}}
 
-Equivalent command:
-
-`docker pull docker.io/hello-world:latest`{{execute}}
-
 Let's take a look at our docker images:
 
 `docker images | grep --color -E '^|hello-world'`{{execute}}
