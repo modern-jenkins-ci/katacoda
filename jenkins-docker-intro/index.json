@@ -27,8 +27,7 @@
         "file": "docker-compose-master.yml",
         "target": "/root",
         "chmod": "664"
-      }],
-      "host02": [{
+      }, {
         "file": "docker-compose-agent.yml",
         "target": "/root",
         "chmod": "664"

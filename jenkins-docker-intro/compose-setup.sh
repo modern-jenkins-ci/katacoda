@@ -8,7 +8,7 @@ if [ "$ENV" == "HOST1" ]; then
 fi
 
 if [ "$ENV" == "HOST2" ]; then
-  ssh root@host02 "cat /root/docker-compose-agent.yml" > /tmp/jenkins/docker-compose.yml
+  ssh root@host01 "cat /root/docker-compose-agent.yml" > /tmp/jenkins/docker-compose.yml
   cd /tmp/jenkins
   clear
   pwd
