@@ -14,7 +14,7 @@ Let's take a look at the `Dockerfile` we will use to build our docker image.
 
 `mkdir html`{{execute}}
 
-`echo "Hello from SWPC LITE 2018. Today is <b>$(date '+%D')</b>. This is a docker container with hostname: <b>$(hostname)</b>" > html/index.html`{{execute}}
+`echo "Hello from SWPC LITE 2018. Today is [$(date '+%D')]. This is a docker container with hostname: [$(hostname)]" > html/index.html`{{execute}}
 
 `cat html/index.html`{{execute}}
 
