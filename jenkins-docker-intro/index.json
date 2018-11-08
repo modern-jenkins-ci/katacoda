@@ -31,6 +31,10 @@
         "file": "docker-compose-agent.yml",
         "target": "/root",
         "chmod": "664"
+      }, {
+        "file": "Dockerfile.agent",
+        "target": "/root",
+        "chmod": "664"
       }]
     }
   },
