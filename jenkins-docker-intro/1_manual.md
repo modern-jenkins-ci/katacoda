@@ -8,6 +8,10 @@ In this step we will pull the Jenkins images and run them manually. The Dockerfi
 
 `docker pull jenkins/jenkins:lts-alpine`{{execute HOST1}}
 
+Lets take a look at that docker image:
+
+`docker images | grep --color -E '^|jenkins/jenkins'`{{execute HOST1}}
+
 `mkdir -p /tmp/jenkins/data \
     && cd /tmp/jenkins`{{execute}}
 
