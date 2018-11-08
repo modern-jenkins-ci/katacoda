@@ -8,9 +8,11 @@ Master:
 
 `cd /jenkins && cat docker-compose.yml`{{execute HOST1}}
 
-Slave:
+Build Agent:
 
 `cd /jenkins && cat docker-compose.yml`{{execute HOST2}}
+
+`cd /jenkins && cat Dockerfile.agent`{{execute HOST2}}
 
 Let start up the containers:
 
@@ -18,7 +20,7 @@ Master:
 
 `docker-compose up -d`{{execute HOST1}}
 
-Slave:
+Build Agent:
 
 `docker-compose up -d`{{execute HOST2}}
 
@@ -38,7 +40,7 @@ Lets look at the master's log file with docker-compose:
 
 `docker-compose logs -f jenkins-master`{{execute HOST1}}
 
-## Slave setup
+## Build Agent Setup
 
 `export JOIN_SECRET=`{{copy}}
 

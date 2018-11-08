@@ -4,6 +4,7 @@ services:
 
   jenkins-agent:
     build:
+      context: .
       dockerfile: Dockerfile.agent
     user: root
     volumes:
