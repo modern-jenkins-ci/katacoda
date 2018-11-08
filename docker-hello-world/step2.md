@@ -6,7 +6,7 @@ We will now build a custom docker image to serve a custom web page.
 
 Let's take a look at the `Dockerfile` we will use to build our docker image.
 
-`cd ~/swpc`{{execute}}
+`cd ~/swpc && ls -al`{{execute}}
 
 `cat Dockerfile`{{execute}}
 
