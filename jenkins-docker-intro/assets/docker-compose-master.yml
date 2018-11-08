@@ -9,7 +9,7 @@ services:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - /tmp/jenkins/data/jenkins-master:/var/jenkins_home
+      - /jenkins/data/jenkins-master:/var/jenkins_home
     environment:
       - JAVA_OPTS=-Xms512m -Xmx1g
     restart: always

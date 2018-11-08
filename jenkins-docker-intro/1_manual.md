@@ -12,13 +12,13 @@ Lets take a look at that docker image:
 
 `docker images | grep --color -E '^|jenkins/jenkins'`{{execute HOST1}}
 
-`mkdir -p /tmp/jenkins/data \
-    && cd /tmp/jenkins`{{execute}}
+`mkdir -p /jenkins/data \
+    && cd /jenkins`{{execute}}
 
 `docker run -d \
     --name jenkins-master \
     -u root \
-    -v /tmp/jenkins/data/jenkins-master:/var/jenkins_home \
+    -v /jenkins/data/jenkins-master:/var/jenkins_home \
     -p 8080:8080 -p 50000:50000 \
     jenkins/jenkins:lts-alpine`{{execute HOST1}}
 
@@ -46,7 +46,7 @@ If we wanted to start up a Jenkins agent, we could run the following command:
     --name jenkins-agent \
     -u root \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /tmp/jenkins/data/jenkins-agent:/home/jenkins/ci-agent \
+    -v /jenkins/data/jenkins-agent:/home/jenkins/ci-agent \
     jenkins/slave:alpine \
     java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://[[HOST1_IP]]:8080/computer/docker-agent/slave-agent.jnlp -secret "changeme" -workDir "/home/jenkins/ci-agent"`{{copy}}
 
