@@ -6,7 +6,8 @@
   "time": "15-20 minutes",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "env-setup.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -18,8 +19,7 @@
       },
       {
         "title": "Docker-Compose Container Orchestration",
-        "text": "2_compose.md",
-        "code": "compose-setup.sh"
+        "text": "2_compose.md"
       }
     ],
     "assets": {
