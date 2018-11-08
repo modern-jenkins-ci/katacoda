@@ -44,6 +44,8 @@ Lets look at the master's log file with docker-compose:
 
 `docker-compose up -d`{{execute HOST2}}
 
+`docker-compose logs -f`{{execute HOST2}}
+
 ## Summary
 
 We have fully orchestrated our Jenkins master and build agent docker containers with docker-compose. You can now configure your Jenkins master server.

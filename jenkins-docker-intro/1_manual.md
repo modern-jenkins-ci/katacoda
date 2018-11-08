@@ -44,7 +44,7 @@ If we wanted to start up a Jenkins agent, we could run the following command:
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp/jenkins/data/jenkins-agent:/home/jenkins/ci-agent \
     jenkins/slave:alpine \
-    java -jar /usr/share/jenkins/slave.jar -jnlpUrl https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/computer/docker-agent/slave-agent.jnlp -secret "changeme" -workDir "/home/jenkins/ci-agent"`{{execute HOST2}}
+    java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://[[HOST1_IP]]:8080/computer/docker-agent/slave-agent.jnlp -secret "changeme" -workDir "/home/jenkins/ci-agent"`{{copy}}
 
 ## Cleanup
 `docker stop jenkins-master && docker rm jenkins-master`{{execute HOST1}}

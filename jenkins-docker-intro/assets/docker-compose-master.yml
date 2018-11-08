@@ -10,4 +10,6 @@ services:
       - "50000:50000"
     volumes:
       - /tmp/jenkins/data/jenkins-master:/var/jenkins_home
+    environment:
+      - JAVA_OPTS=-Xms256m -Xmx256m
     restart: always
