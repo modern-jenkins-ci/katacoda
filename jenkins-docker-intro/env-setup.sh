@@ -1,11 +1,3 @@
-if [ "$ENV" == "HOST2" ]; then
-  export JENKINS_MASTER=http://[[HOST1_IP]]:8080
-  mkdir -p /tmp/jenkins/data
-  cd /tmp/jenkins
-  ssh root@host01 "cat /root/docker-compose-agent.yml" > /tmp/jenkins/docker-compose.yml
-  pwd
-fi
-
 if [ "$ENV" == "HOST1" ]; then
 host_commands=(
 "mkdir -p /tmp/jenkins/data"
@@ -16,4 +8,13 @@ host_commands=(
   ssh root@host01 "$all_commands"
   clear
   ssh root@host01
+fi
+
+if [ "$ENV" == "HOST2" ]; then
+  sleep 1
+  export JENKINS_MASTER=http://[[HOST1_IP]]:8080
+  mkdir -p /tmp/jenkins/data
+  cd /tmp/jenkins
+  ssh root@host01 "cat /root/docker-compose-agent.yml" > /tmp/jenkins/docker-compose.yml
+  pwd
 fi
