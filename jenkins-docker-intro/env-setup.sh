@@ -16,5 +16,6 @@ if [ "$ENV" == "HOST2" ]; then
   mkdir -p /tmp/jenkins/data
   cd /tmp/jenkins
   ssh root@host01 "cat /root/docker-compose-agent.yml" > /tmp/jenkins/docker-compose.yml
+  clear
   pwd
 fi
