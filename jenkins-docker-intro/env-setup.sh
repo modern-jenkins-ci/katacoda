@@ -1,6 +1,7 @@
 if [ "$ENV" == "HOST1" ]; then
 host_commands=(
 "mkdir -p /jenkins/data"
+"sleep 1"
 "cp /root/docker-compose-master.yml /jenkins/docker-compose.yml"
 )
   all_commands=$(awk -v sep=' && ' 'BEGIN{ORS=OFS="";for(i=1;i<ARGC;i++){print ARGV[i],ARGC-i-1?sep:""}}' "${host_commands[@]}")
