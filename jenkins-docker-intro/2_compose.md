@@ -6,11 +6,11 @@ In this step we will inspect our docker-compose file and run the docker-compose 
 
 Master:
 
-`cat docker-compose.yml`{{execute HOST1}}
+`cd /jenkins && cat docker-compose.yml`{{execute HOST1}}
 
 Slave:
 
-`cat docker-compose.yml`{{execute HOST2}}
+`cd /jenkins && cat docker-compose.yml`{{execute HOST2}}
 
 Let start up the containers:
 
