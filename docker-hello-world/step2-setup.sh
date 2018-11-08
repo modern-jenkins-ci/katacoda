@@ -1,2 +1,2 @@
 clear
-echo "hello"
+#echo "step2"
