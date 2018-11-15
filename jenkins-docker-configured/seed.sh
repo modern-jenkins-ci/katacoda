@@ -17,7 +17,7 @@ git clone https://github.com/modern-jenkins-ci/docker-jenkins.git $HOME/docker-j
 
 cd $HOME/docker-jenkins
 sed -i 's/dockerfile: Dockerfile/dockerfile: Dockerfile.secrets/g' docker-compose.yml
-grep -v "/var/jenkins_secrets" docker-compose.yml
+grep -v "/var/jenkins_secrets" docker-compose.yml > docker-compose.yml
 mkdir -p build/master/secrets
 curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/local_secrets
 
