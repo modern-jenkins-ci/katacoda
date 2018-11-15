@@ -16,9 +16,10 @@ export GITHUB_SETUP_ORG_DISPLAY_NAME=Modern-Jenkins
 git clone https://github.com/modern-jenkins-ci/docker-jenkins.git $HOME/docker-jenkins
 
 cd $HOME/docker-jenkins
-mkdir -p build/master/secrets
 sed -i 's/dockerfile: Dockerfile/dockerfile: Dockerfile.secrets/g' docker-compose.yml
-curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/github
+grep -v "/var/jenkins_secrets" docker-compose.yml
+mkdir -p build/master/secrets
+curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/local_secrets
 
 cd $HOME
 clear
