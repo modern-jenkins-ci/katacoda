@@ -6,6 +6,12 @@ export JENKINS_FRONTEND_URL=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].en
 export LOAD_LOCAL_SECRETS=false
 export JENKINS_SERVER=[[HOST_IP]]
 
+export GITHUB_SETUP_API_URL=https://api.github.com
+export GITHUB_SETUP_CREDENTIAL_ID=swpc-2018-pat
+export GITHUB_SETUP_WEBHOOK_CREDENTIAL_ID=swpc-2018-pat-text
+export GITHUB_SETUP_ORG_NAME=modern-jenkins-ci
+export GITHUB_SETUP_ORG_DISPLAY_NAME=Modern-Jenkins
+
 git clone https://github.com/modern-jenkins-ci/docker-jenkins.git $HOME/docker-jenkins
 
 cd $HOME/docker-jenkins
