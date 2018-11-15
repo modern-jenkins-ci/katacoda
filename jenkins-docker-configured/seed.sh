@@ -1,3 +1,4 @@
+export JAVA_OPTS=-Djenkins.install.runSetupWizard=false
 export JENKINS_SECRETS=/var/jenkins_secrets #this is the path inside the container
 export LOCAL_PASSWORD=344827fbdbfb40d5aac067c7a07b9230
 export JOIN_SECRET=
@@ -16,6 +17,7 @@ git clone https://github.com/modern-jenkins-ci/docker-jenkins.git $HOME/docker-j
 
 cd $HOME/docker-jenkins
 mkdir -p build/master/secrets
+sed -i 's/dockerfile: Dockerfile/dockerfile: Dockerfile.secrets/g' docker-compose.yml
 curl -sSL $SECRETS_SEED_URL -o ./build/master/secrets/github
 
 cd $HOME
